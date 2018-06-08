@@ -19,3 +19,8 @@ extension UITabBarController {
         return .all
     }
 }
+
+extension UIColor {
+    // TODO: randomize
+    static var random: UIColor { return UIColor.cyan }
+}

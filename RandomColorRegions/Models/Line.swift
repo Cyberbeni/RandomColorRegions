@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 
 class Line {
-    var start: CGPoint
+    private var start: CGPoint
     var end: CGPoint
     
     init(point: CGPoint) {
@@ -22,5 +22,14 @@ class Line {
         let deltaX = start.x - end.x
         let deltaY = start.y - end.y
         return deltaX * deltaX + deltaY * deltaY
+    }
+}
+
+extension Line: Drawable {
+    func draw(in context: CGContext) {
+        context.beginPath()
+        context.move(to: self.start)
+        context.addLine(to: self.end)
+        context.strokePath()
     }
 }

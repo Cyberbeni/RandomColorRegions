@@ -9,9 +9,11 @@
 import UIKit
 
 class DrawingView: UIView {
-    private var regionsLayer = ColoredRegionsLayer()
-    private var linesLayer = LinesLayer()
+    private var regionsLayer = DrawableCollectionLayer()
+    private var linesLayer = DrawableCollectionLayer(color: UIColor.blue.cgColor)
     private var currentLineLayers = Dictionary<UITouch, CurrentLineLayer>()
+    
+    private var lines = [Line]()
     
     // MARK: - initialization
     override init(frame: CGRect) {
@@ -100,20 +102,17 @@ class DrawingView: UIView {
                 let line = layer.line
                 line.end = touch.location(in: self)
                 if line.lengthSquared > 100 {
-                    self.linesLayer.linesToAdd.append(layer.line)
-                    self.linesLayer.setNeedsDisplay()
-                    print("needs display")
-                    print(self.linesLayer.frame)
+                    self.linesLayer.add(elementToDraw: line)
+                    self.add(line: line)
                 }
             }
         }
     }
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    private func add(line: Line) {
+        // TODO: generate new regions
+        self.regionsLayer.add(elementToDraw: Region(points: [CGPoint(x: 10, y: 10),CGPoint(x: 10, y: 100),CGPoint(x: 100, y: 100),CGPoint(x: 100, y: 10)]))
+        
+        self.lines.append(line)
     }
-    */
 }

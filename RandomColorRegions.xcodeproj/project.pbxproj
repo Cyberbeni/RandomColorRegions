@@ -15,10 +15,11 @@
 		7536A63120CB15B200B32942 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63020CB15B200B32942 /* DrawingView.swift */; };
 		7536A63720CB1B6E00B32942 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63620CB1B6E00B32942 /* BaseViewController.swift */; };
 		7536A63B20CB298900B32942 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63920CB298900B32942 /* UIKitExtensions.swift */; };
-		7536A63D20CB29F500B32942 /* ColoredRegionsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63C20CB29F500B32942 /* ColoredRegionsLayer.swift */; };
-		7536A63F20CB2A0C00B32942 /* LinesLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63E20CB2A0C00B32942 /* LinesLayer.swift */; };
 		7536A64120CB2A2400B32942 /* CurrentLineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64020CB2A2400B32942 /* CurrentLineLayer.swift */; };
 		7536A64420CB2DA600B32942 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64320CB2DA600B32942 /* Line.swift */; };
+		7536A64620CB400100B32942 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64520CB400100B32942 /* Region.swift */; };
+		7536A64820CB411700B32942 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64720CB411700B32942 /* Drawable.swift */; };
+		7536A64A20CB427D00B32942 /* DrawableCollectionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64920CB427D00B32942 /* DrawableCollectionLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +35,11 @@
 		7536A63020CB15B200B32942 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		7536A63620CB1B6E00B32942 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7536A63A20CB298900B32942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = RandomColorRegions/Base.lproj/UIKitExtensions.swift; sourceTree = SOURCE_ROOT; };
-		7536A63C20CB29F500B32942 /* ColoredRegionsLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredRegionsLayer.swift; sourceTree = "<group>"; };
-		7536A63E20CB2A0C00B32942 /* LinesLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesLayer.swift; sourceTree = "<group>"; };
 		7536A64020CB2A2400B32942 /* CurrentLineLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLineLayer.swift; sourceTree = "<group>"; };
 		7536A64320CB2DA600B32942 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		7536A64520CB400100B32942 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		7536A64720CB411700B32942 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		7536A64920CB427D00B32942 /* DrawableCollectionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableCollectionLayer.swift; sourceTree = "<group>"; };
 		CA714BB9B11185417789C616 /* Pods-RandomColorRegions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomColorRegions.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomColorRegions/Pods-RandomColorRegions.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,9 +126,8 @@
 		7536A63820CB23B300B32942 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				7536A63C20CB29F500B32942 /* ColoredRegionsLayer.swift */,
-				7536A63E20CB2A0C00B32942 /* LinesLayer.swift */,
 				7536A64020CB2A2400B32942 /* CurrentLineLayer.swift */,
+				7536A64920CB427D00B32942 /* DrawableCollectionLayer.swift */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -135,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				7536A64320CB2DA600B32942 /* Line.swift */,
+				7536A64520CB400100B32942 /* Region.swift */,
+				7536A64720CB411700B32942 /* Drawable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,11 +271,12 @@
 			files = (
 				7536A63720CB1B6E00B32942 /* BaseViewController.swift in Sources */,
 				7536A61D20CB0F6C00B32942 /* DrawingViewController.swift in Sources */,
-				7536A63D20CB29F500B32942 /* ColoredRegionsLayer.swift in Sources */,
-				7536A63F20CB2A0C00B32942 /* LinesLayer.swift in Sources */,
+				7536A64820CB411700B32942 /* Drawable.swift in Sources */,
 				7536A63B20CB298900B32942 /* UIKitExtensions.swift in Sources */,
 				7536A62F20CB115500B32942 /* SortedArray.swift in Sources */,
 				7536A61B20CB0F6C00B32942 /* AppDelegate.swift in Sources */,
+				7536A64A20CB427D00B32942 /* DrawableCollectionLayer.swift in Sources */,
+				7536A64620CB400100B32942 /* Region.swift in Sources */,
 				7536A64120CB2A2400B32942 /* CurrentLineLayer.swift in Sources */,
 				7536A63120CB15B200B32942 /* DrawingView.swift in Sources */,
 				7536A64420CB2DA600B32942 /* Line.swift in Sources */,

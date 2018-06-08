@@ -27,9 +27,6 @@ class CurrentLineLayer: CALayer {
         context.setStrokeColor(UIColor.red.cgColor)
         context.setLineWidth(2)
         
-        context.beginPath()
-        context.move(to: line.start)
-        context.addLine(to: line.end)
-        context.strokePath()
+        self.line.draw(in: context)
     }
 }
