@@ -7,21 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CDAC0033BF6DADB5AF91F23 /* Pods_RandomColorRegions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15285F434F5B06FFC3870BE4 /* Pods_RandomColorRegions.framework */; };
 		7536A61B20CB0F6C00B32942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A61A20CB0F6C00B32942 /* AppDelegate.swift */; };
-		7536A61D20CB0F6C00B32942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A61C20CB0F6C00B32942 /* ViewController.swift */; };
-		7536A62020CB0F6C00B32942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7536A61E20CB0F6C00B32942 /* Main.storyboard */; };
+		7536A61D20CB0F6C00B32942 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A61C20CB0F6C00B32942 /* DrawingViewController.swift */; };
 		7536A62220CB0F6F00B32942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7536A62120CB0F6F00B32942 /* Assets.xcassets */; };
-		7536A62520CB0F6F00B32942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7536A62320CB0F6F00B32942 /* LaunchScreen.storyboard */; };
+		7536A62F20CB115500B32942 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A62E20CB115500B32942 /* SortedArray.swift */; };
+		7536A63120CB15B200B32942 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63020CB15B200B32942 /* DrawingView.swift */; };
+		7536A63720CB1B6E00B32942 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63620CB1B6E00B32942 /* BaseViewController.swift */; };
+		7536A63B20CB298900B32942 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63920CB298900B32942 /* UIKitExtensions.swift */; };
+		7536A63D20CB29F500B32942 /* ColoredRegionsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63C20CB29F500B32942 /* ColoredRegionsLayer.swift */; };
+		7536A63F20CB2A0C00B32942 /* LinesLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A63E20CB2A0C00B32942 /* LinesLayer.swift */; };
+		7536A64120CB2A2400B32942 /* CurrentLineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64020CB2A2400B32942 /* CurrentLineLayer.swift */; };
+		7536A64420CB2DA600B32942 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64320CB2DA600B32942 /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15285F434F5B06FFC3870BE4 /* Pods_RandomColorRegions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomColorRegions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28BD115BBB57FE7A30F24E36 /* Pods-RandomColorRegions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomColorRegions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomColorRegions/Pods-RandomColorRegions.debug.xcconfig"; sourceTree = "<group>"; };
 		7536A61720CB0F6C00B32942 /* RandomColorRegions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomColorRegions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7536A61A20CB0F6C00B32942 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7536A61C20CB0F6C00B32942 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7536A61F20CB0F6C00B32942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7536A61C20CB0F6C00B32942 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		7536A62120CB0F6F00B32942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7536A62420CB0F6F00B32942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7536A62620CB0F6F00B32942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7536A62C20CB104B00B32942 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		7536A62E20CB115500B32942 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
+		7536A63020CB15B200B32942 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		7536A63620CB1B6E00B32942 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7536A63A20CB298900B32942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = RandomColorRegions/Base.lproj/UIKitExtensions.swift; sourceTree = SOURCE_ROOT; };
+		7536A63C20CB29F500B32942 /* ColoredRegionsLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredRegionsLayer.swift; sourceTree = "<group>"; };
+		7536A63E20CB2A0C00B32942 /* LinesLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesLayer.swift; sourceTree = "<group>"; };
+		7536A64020CB2A2400B32942 /* CurrentLineLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLineLayer.swift; sourceTree = "<group>"; };
+		7536A64320CB2DA600B32942 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		CA714BB9B11185417789C616 /* Pods-RandomColorRegions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomColorRegions.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomColorRegions/Pods-RandomColorRegions.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CDAC0033BF6DADB5AF91F23 /* Pods_RandomColorRegions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,8 @@
 			children = (
 				7536A61920CB0F6C00B32942 /* RandomColorRegions */,
 				7536A61820CB0F6C00B32942 /* Products */,
+				A78F2B944FEBF58F2834C05C /* Pods */,
+				BA199529C94B35C0CF83D70F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +74,86 @@
 		7536A61920CB0F6C00B32942 /* RandomColorRegions */ = {
 			isa = PBXGroup;
 			children = (
+				7536A64220CB2D9000B32942 /* Models */,
+				7536A63820CB23B300B32942 /* Layers */,
+				7536A63520CB166600B32942 /* Resources */,
+				7536A63420CB164B00B32942 /* Utility Classes & Extensions */,
+				7536A63320CB161400B32942 /* Views */,
+				7536A63220CB15B800B32942 /* ViewControllers */,
 				7536A61A20CB0F6C00B32942 /* AppDelegate.swift */,
-				7536A61C20CB0F6C00B32942 /* ViewController.swift */,
-				7536A61E20CB0F6C00B32942 /* Main.storyboard */,
-				7536A62120CB0F6F00B32942 /* Assets.xcassets */,
-				7536A62320CB0F6F00B32942 /* LaunchScreen.storyboard */,
-				7536A62620CB0F6F00B32942 /* Info.plist */,
 			);
 			path = RandomColorRegions;
+			sourceTree = "<group>";
+		};
+		7536A63220CB15B800B32942 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7536A61C20CB0F6C00B32942 /* DrawingViewController.swift */,
+				7536A63620CB1B6E00B32942 /* BaseViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7536A63320CB161400B32942 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7536A63020CB15B200B32942 /* DrawingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7536A63420CB164B00B32942 /* Utility Classes & Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7536A62E20CB115500B32942 /* SortedArray.swift */,
+				7536A63920CB298900B32942 /* UIKitExtensions.swift */,
+			);
+			path = "Utility Classes & Extensions";
+			sourceTree = "<group>";
+		};
+		7536A63520CB166600B32942 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7536A62C20CB104B00B32942 /* Podfile */,
+				7536A62120CB0F6F00B32942 /* Assets.xcassets */,
+				7536A62620CB0F6F00B32942 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7536A63820CB23B300B32942 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				7536A63C20CB29F500B32942 /* ColoredRegionsLayer.swift */,
+				7536A63E20CB2A0C00B32942 /* LinesLayer.swift */,
+				7536A64020CB2A2400B32942 /* CurrentLineLayer.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		7536A64220CB2D9000B32942 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7536A64320CB2DA600B32942 /* Line.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A78F2B944FEBF58F2834C05C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28BD115BBB57FE7A30F24E36 /* Pods-RandomColorRegions.debug.xcconfig */,
+				CA714BB9B11185417789C616 /* Pods-RandomColorRegions.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA199529C94B35C0CF83D70F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15285F434F5B06FFC3870BE4 /* Pods_RandomColorRegions.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7536A62920CB0F6F00B32942 /* Build configuration list for PBXNativeTarget "RandomColorRegions" */;
 			buildPhases = (
+				2E21317920AE760DB47FD2AA /* [CP] Check Pods Manifest.lock */,
 				7536A61320CB0F6C00B32942 /* Sources */,
 				7536A61420CB0F6C00B32942 /* Frameworks */,
 				7536A61520CB0F6C00B32942 /* Resources */,
+				4998E556CF469590FF7AB81B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,41 +216,78 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7536A62520CB0F6F00B32942 /* LaunchScreen.storyboard in Resources */,
 				7536A62220CB0F6F00B32942 /* Assets.xcassets in Resources */,
-				7536A62020CB0F6C00B32942 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E21317920AE760DB47FD2AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RandomColorRegions-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4998E556CF469590FF7AB81B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RandomColorRegions/Pods-RandomColorRegions-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RandomColorRegions/Pods-RandomColorRegions-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7536A61320CB0F6C00B32942 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7536A61D20CB0F6C00B32942 /* ViewController.swift in Sources */,
+				7536A63720CB1B6E00B32942 /* BaseViewController.swift in Sources */,
+				7536A61D20CB0F6C00B32942 /* DrawingViewController.swift in Sources */,
+				7536A63D20CB29F500B32942 /* ColoredRegionsLayer.swift in Sources */,
+				7536A63F20CB2A0C00B32942 /* LinesLayer.swift in Sources */,
+				7536A63B20CB298900B32942 /* UIKitExtensions.swift in Sources */,
+				7536A62F20CB115500B32942 /* SortedArray.swift in Sources */,
 				7536A61B20CB0F6C00B32942 /* AppDelegate.swift in Sources */,
+				7536A64120CB2A2400B32942 /* CurrentLineLayer.swift in Sources */,
+				7536A63120CB15B200B32942 /* DrawingView.swift in Sources */,
+				7536A64420CB2DA600B32942 /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7536A61E20CB0F6C00B32942 /* Main.storyboard */ = {
+		7536A63920CB298900B32942 /* UIKitExtensions.swift */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7536A61F20CB0F6C00B32942 /* Base */,
+				7536A63A20CB298900B32942 /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7536A62320CB0F6F00B32942 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7536A62420CB0F6F00B32942 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = UIKitExtensions.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -278,11 +409,14 @@
 		};
 		7536A62A20CB0F6F00B32942 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28BD115BBB57FE7A30F24E36 /* Pods-RandomColorRegions.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V63P53K235;
-				INFOPLIST_FILE = RandomColorRegions/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RandomColorRegions/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,11 +430,14 @@
 		};
 		7536A62B20CB0F6F00B32942 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA714BB9B11185417789C616 /* Pods-RandomColorRegions.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V63P53K235;
-				INFOPLIST_FILE = RandomColorRegions/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RandomColorRegions/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
