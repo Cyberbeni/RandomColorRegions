@@ -20,6 +20,7 @@
 		7536A64620CB400100B32942 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64520CB400100B32942 /* Region.swift */; };
 		7536A64820CB411700B32942 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64720CB411700B32942 /* Drawable.swift */; };
 		7536A64A20CB427D00B32942 /* DrawableCollectionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64920CB427D00B32942 /* DrawableCollectionLayer.swift */; };
+		7536A64C20CB49D200B32942 /* RegionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536A64B20CB49D200B32942 /* RegionGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		7536A64520CB400100B32942 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		7536A64720CB411700B32942 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		7536A64920CB427D00B32942 /* DrawableCollectionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableCollectionLayer.swift; sourceTree = "<group>"; };
+		7536A64B20CB49D200B32942 /* RegionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGenerator.swift; sourceTree = "<group>"; };
 		CA714BB9B11185417789C616 /* Pods-RandomColorRegions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomColorRegions.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomColorRegions/Pods-RandomColorRegions.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				7536A64320CB2DA600B32942 /* Line.swift */,
 				7536A64520CB400100B32942 /* Region.swift */,
 				7536A64720CB411700B32942 /* Drawable.swift */,
+				7536A64B20CB49D200B32942 /* RegionGenerator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				7536A64120CB2A2400B32942 /* CurrentLineLayer.swift in Sources */,
 				7536A63120CB15B200B32942 /* DrawingView.swift in Sources */,
 				7536A64420CB2DA600B32942 /* Line.swift in Sources */,
+				7536A64C20CB49D200B32942 /* RegionGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,11 +9,13 @@
 import UIKit
 
 class DrawingView: UIView {
-    private var regionsLayer = DrawableCollectionLayer()
-    private var linesLayer = DrawableCollectionLayer(color: UIColor.blue.cgColor)
+    private let minimumLineLength: CGFloat = 20.0
+    
+    private let regionsLayer = DrawableCollectionLayer<Region>()
+    private let linesLayer = DrawableCollectionLayer<Line>(color: UIColor.blue.cgColor)
     private var currentLineLayers = Dictionary<UITouch, CurrentLineLayer>()
     
-    private var lines = [Line]()
+    private let regionGenerator = RegionGenerator()
     
     // MARK: - initialization
     override init(frame: CGRect) {
@@ -59,8 +61,7 @@ class DrawingView: UIView {
         // modify the corresponding current line layers
         touches.forEach { (touch) in
             if let layer = self.currentLineLayers[touch] {
-                layer.line.end = touch.location(in: self)
-                layer.setNeedsDisplay()
+                layer.update(endPoint: touch.location(in: self))
             }
         }
         
@@ -101,18 +102,11 @@ class DrawingView: UIView {
                 
                 let line = layer.line
                 line.end = touch.location(in: self)
-                if line.lengthSquared > 100 {
-                    self.linesLayer.add(elementToDraw: line)
-                    self.add(line: line)
+                if line.lengthSquared > self.minimumLineLength * self.minimumLineLength {
+                    self.linesLayer.add(elementsToDraw: line)
+                    self.regionsLayer.add(elementsToDraw: self.regionGenerator.add(line: line))
                 }
             }
         }
-    }
-    
-    private func add(line: Line) {
-        // TODO: generate new regions
-        self.regionsLayer.add(elementToDraw: Region(points: [CGPoint(x: 10, y: 10),CGPoint(x: 10, y: 100),CGPoint(x: 100, y: 100),CGPoint(x: 100, y: 10)]))
-        
-        self.lines.append(line)
     }
 }

@@ -8,8 +8,9 @@
 
 import UIKit
 
-class DrawableCollectionLayer: CALayer {
-    private var elementsToAdd = [Drawable]()
+// Since we want to store Regions and Lines in a separate layer, it's better to make it model specific instead of accepting any Drawable object in every instance of this class.
+class DrawableCollectionLayer<Element: Drawable>: CALayer {
+    private var elementsToAdd = [Element]()
     private var needsToClear = false
     private var savedImage: CGImage?
     private var color: CGColor?
@@ -60,8 +61,12 @@ class DrawableCollectionLayer: CALayer {
         self.savedImage = context.makeImage()
     }
     
-    func add(elementToDraw: Drawable) {
-        self.elementsToAdd.append(elementToDraw)
+    func add(elementsToDraw: Element...) {
+        self.add(elementsToDraw: elementsToDraw)
+    }
+    
+    func add(elementsToDraw: [Element]) {
+        self.elementsToAdd.append(contentsOf: elementsToDraw)
         self.setNeedsDisplay()
     }
 }

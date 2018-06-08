@@ -29,4 +29,9 @@ class CurrentLineLayer: CALayer {
         
         self.line.draw(in: context)
     }
+    
+    func update(endPoint: CGPoint) {
+        self.line.end = endPoint
+        self.setNeedsDisplay()
+    }
 }
