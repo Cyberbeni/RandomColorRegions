@@ -9,10 +9,14 @@
 import CoreGraphics
 
 class Intersection: Comparable {
-    var line: Line
+    weak var selfLine: Line!
+    weak var line: Line!
     var point: CGFloat
+    var isRightHanded = true
+    var isForward = true
     
-    init(line: Line, point: CGFloat) {
+    init(selfLine: Line, line: Line, point: CGFloat) {
+        self.selfLine = selfLine
         self.line = line
         self.point = point
     }

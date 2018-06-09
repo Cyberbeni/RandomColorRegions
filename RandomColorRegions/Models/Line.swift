@@ -10,8 +10,15 @@ import Foundation
 import CoreGraphics
 
 class Line {
-    private var start: CGPoint
+    private(set) var start: CGPoint
     var end: CGPoint
+    
+    // between 0 and 2 PI
+    private(set) var lhsForwardAngle: CGFloat = 0
+    private(set) var lhsBackwardAngle: CGFloat = 0
+    // between -PI and PI
+    private(set) var rhsForwardAngle: CGFloat = 0
+    private(set) var rhsBackwardAngle: CGFloat = 0
     
     var intersections = SortedArray<Intersection>()
     
@@ -24,6 +31,53 @@ class Line {
         let deltaX = start.x - end.x
         let deltaY = start.y - end.y
         return deltaX * deltaX + deltaY * deltaY
+    }
+    
+    func calculateAngles() {
+        if start.x == end.x {
+            if end.y > start.y {
+                self.lhsForwardAngle = .pi / 2
+                self.lhsBackwardAngle = 3 * .pi / 2
+                self.rhsForwardAngle = .pi / 2
+                self.rhsBackwardAngle = -(.pi / 2)
+            } else {
+                self.lhsForwardAngle = 3 * .pi / 2
+                self.lhsBackwardAngle = .pi / 2
+                self.rhsForwardAngle = -(.pi / 2)
+                self.rhsBackwardAngle = .pi / 2
+            }
+            return
+        }
+        
+        let m = (end.y - start.y) / (end.x - start.x)
+        let angle = atan(m)
+        
+        switch (end.y > start.y, end.x > start.x) {
+        // angle: 0 - 90
+        case (true, true):
+            self.lhsForwardAngle = angle
+            self.lhsBackwardAngle = angle + .pi
+            self.rhsForwardAngle = angle
+            self.rhsBackwardAngle = angle - .pi
+        // angle: 90 - 180
+        case (true, false):
+            self.lhsForwardAngle = angle + .pi
+            self.lhsBackwardAngle = angle + 2 * .pi
+            self.rhsForwardAngle = angle + .pi
+            self.rhsBackwardAngle = angle
+        // angle: 180-270
+        case (false, false):
+            self.lhsForwardAngle = angle + .pi
+            self.lhsBackwardAngle = angle
+            self.rhsForwardAngle = angle - .pi
+            self.rhsBackwardAngle = angle
+        // angle: 270 - 360
+        case (false, true):
+            self.lhsForwardAngle = angle + 2 * .pi
+            self.lhsBackwardAngle = angle + .pi
+            self.rhsForwardAngle = angle
+            self.rhsBackwardAngle = angle + .pi
+        }
     }
     
     // http://www.ambrsoft.com/MathCalc/Line/TwoLinesIntersection/TwoLinesIntersection.htm
@@ -69,5 +123,11 @@ extension Line: Drawable {
         context.move(to: self.start)
         context.addLine(to: self.end)
         context.strokePath()
+    }
+}
+
+extension Line: CustomStringConvertible {
+    var description: String {
+        return "Line:\n\(self.lhsForwardAngle);\(self.lhsBackwardAngle)\n\(self.rhsForwardAngle);\(self.rhsBackwardAngle)\n"
     }
 }

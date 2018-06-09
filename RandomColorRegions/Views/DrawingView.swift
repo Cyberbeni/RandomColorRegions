@@ -41,6 +41,7 @@ class DrawingView: UIView {
     @objc func reset() {
         self.regionsLayer.reset()
         self.linesLayer.reset()
+        self.regionGenerator.reset()
     }
     
     // MARK: - overrides

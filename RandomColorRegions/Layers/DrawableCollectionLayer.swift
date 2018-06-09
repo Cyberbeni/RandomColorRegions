@@ -66,7 +66,9 @@ class DrawableCollectionLayer<Element: Drawable>: CALayer {
     }
     
     func add(elementsToDraw: [Element]) {
-        self.elementsToAdd.append(contentsOf: elementsToDraw)
-        self.setNeedsDisplay()
+        DispatchQueue.main.async {
+            self.elementsToAdd.append(contentsOf: elementsToDraw)
+            self.setNeedsDisplay()
+        }
     }
 }
