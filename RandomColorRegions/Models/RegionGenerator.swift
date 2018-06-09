@@ -46,35 +46,36 @@ class RegionGenerator {
                             break
                     }
                     print(currentLine.description)
+                    var minAngle = CGFloat()
+                    var maxAngle = CGFloat()
                     switch (currentIntersection.isRightHanded, currentIntersection.isForward) {
                     case (true, true):
-                        if currentLine.lhsForwardAngle - .pi < nextLine.rhsForwardAngle, currentLine.lhsForwardAngle > nextLine.lhsForwardAngle {
-                            nextIndex += 1
-                        } else {
-                            nextIndex -= 1
-                            isForward = false
-                        }
+                        minAngle = currentLine.lhsForwardAngle - .pi
+                        maxAngle = currentLine.lhsForwardAngle
                     case (true, false):
-                        if currentLine.lhsBackwardAngle - .pi < nextLine.rhsForwardAngle, currentLine.lhsBackwardAngle > nextLine.lhsForwardAngle {
-                            nextIndex += 1
-                        } else {
-                            nextIndex -= 1
-                            isForward = false
-                        }
+                        minAngle = currentLine.lhsBackwardAngle - .pi
+                        maxAngle = currentLine.lhsBackwardAngle
                     case (false, true):
-                        if currentLine.rhsForwardAngle + .pi > nextLine.rhsForwardAngle, currentLine.rhsForwardAngle < nextLine.lhsForwardAngle {
-                            nextIndex += 1
-                        } else {
-                            nextIndex -= 1
-                            isForward = false
-                        }
+                        minAngle = currentLine.rhsForwardAngle
+                        maxAngle = currentLine.rhsForwardAngle + .pi
                     case (false, false):
-                        if currentLine.rhsBackwardAngle + .pi > nextLine.rhsForwardAngle, currentLine.rhsBackwardAngle < nextLine.lhsForwardAngle {
-                            nextIndex += 1
-                        } else {
-                            nextIndex -= 1
-                            isForward = false
-                        }
+                        minAngle = currentLine.rhsBackwardAngle
+                        maxAngle = currentLine.rhsBackwardAngle + .pi
+                    }
+                    
+                    if minAngle < 0 {
+                        minAngle += 2 * .pi
+                        maxAngle += 2 * .pi
+                    }
+                    var forwardAngle = nextLine.lhsForwardAngle
+                    if forwardAngle < minAngle {
+                        forwardAngle += 2 * .pi
+                    }
+                    if forwardAngle < maxAngle {
+                        nextIndex += 1
+                    } else {
+                        nextIndex -= 1
+                        isForward = false
                     }
                     
                     if nextLine.intersections.indices.contains(nextIndex) {
@@ -82,13 +83,7 @@ class RegionGenerator {
                         nextIntersection?.isRightHanded = isRightHanded
                         nextIntersection?.isForward = isForward
                     } else {
-                        while pointArray.last?.isRightHanded == !isRightHanded {
-                            pointArray.removeLast()
-                        }
-                        if pointArray.count <= 2 {
-                            break
-                        }
-                        pointArray.last?.isRightHanded = !isRightHanded
+                        break
                     }
                     
                     if let nextIntersection = nextIntersection {
@@ -107,7 +102,6 @@ class RegionGenerator {
             }
         }
         
-//        let newRegions = [Region(points: [CGPoint(x: 10, y: 10),CGPoint(x: 10, y: 100),CGPoint(x: 100, y: 100),CGPoint(x: 100, y: 10)])]
         let newRegions = newRegionIntersectionArrays.map { (intersections) -> Region in
             return Region(points: intersections.map({ (intersection) -> CGPoint in
                 guard let line = intersection.selfLine else { return .zero }
