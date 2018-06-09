@@ -9,13 +9,8 @@
 import UIKit
 
 class DrawingView: UIView {
+    // MARK: static parameters
     private let minimumLineLength: CGFloat = 20.0
-    
-    private let regionsLayer = DrawableCollectionLayer<Region>()
-    private let linesLayer = DrawableCollectionLayer<Line>(color: UIColor.blue.cgColor)
-    private var currentLineLayers = Dictionary<UITouch, CurrentLineLayer>()
-    
-    private let regionGenerator = RegionGenerator()
     
     // MARK: - initialization
     override init(frame: CGRect) {
@@ -26,14 +21,6 @@ class DrawingView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setup()
-    }
-    
-    private func setup() {
-        self.backgroundColor = .white
-        
-        self.layer.addSublayer(self.regionsLayer)
-        self.layer.addSublayer(self.linesLayer)
-        self.currentLineLayers.reserveCapacity(8)
     }
     
     // MARK: - public functions
@@ -92,7 +79,23 @@ class DrawingView: UIView {
         super.layoutSublayers(of: layer)
     }
     
+    // MARK: - private variables
+    
+    private let regionsLayer = DrawableCollectionLayer<Region>()
+    private let linesLayer = DrawableCollectionLayer<Line>(color: UIColor.blue.cgColor)
+    private var currentLineLayers = Dictionary<UITouch, CurrentLineLayer>()
+    
+    private let regionGenerator = RegionGenerator()
+    
     // MARK: - private functions
+    
+    private func setup() {
+        self.backgroundColor = .white
+        
+        self.layer.addSublayer(self.regionsLayer)
+        self.layer.addSublayer(self.linesLayer)
+        self.currentLineLayers.reserveCapacity(8)
+    }
     
     private func handleTouchesEnded(_ touches: Set<UITouch>) {
         // move lines to lines layer and calculate new regions

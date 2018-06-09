@@ -10,9 +10,9 @@ import Foundation
 import CoreGraphics
 
 class Line {
+    // MARK: public variables
     private(set) var start: CGPoint
     var end: CGPoint
-    
     // between 0 and 2 PI
     private(set) var lhsForwardAngle: CGFloat = 0
     private(set) var lhsBackwardAngle: CGFloat = 0
@@ -22,16 +22,20 @@ class Line {
     
     var intersections = SortedArray<Intersection>()
     
-    init(point: CGPoint) {
-        self.start = point
-        self.end = point
-    }
-    
     var lengthSquared: CGFloat {
         let deltaX = start.x - end.x
         let deltaY = start.y - end.y
         return deltaX * deltaX + deltaY * deltaY
     }
+    
+    // MARK: - initialization
+    
+    init(point: CGPoint) {
+        self.start = point
+        self.end = point
+    }
+    
+    // MARK: - public functions
     
     func calculateAngles() {
         if start.x == end.x {
@@ -116,6 +120,8 @@ class Line {
         return (own,others)
     }
 }
+
+// MARK: - protocol extensions
 
 extension Line: Drawable {
     func draw(in context: CGContext) {

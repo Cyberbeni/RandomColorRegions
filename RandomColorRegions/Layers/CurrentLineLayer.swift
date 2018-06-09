@@ -9,9 +9,10 @@
 import UIKit
 
 class CurrentLineLayer: CALayer {
-    var line: Line
+    // MARK: public variables
+    private(set) var line: Line
     
-    // MARK: initialization
+    // MARK: - initialization
     
     init(frame: CGRect, point: CGPoint) {
         self.line = Line(point: point)
@@ -23,15 +24,19 @@ class CurrentLineLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - public functions
+    
+    func update(endPoint: CGPoint) {
+        self.line.end = endPoint
+        self.setNeedsDisplay()
+    }
+    
+    // MARK: - overrides
+    
     override func draw(in context: CGContext) {
         context.setStrokeColor(UIColor.red.cgColor)
         context.setLineWidth(2)
         
         self.line.draw(in: context)
-    }
-    
-    func update(endPoint: CGPoint) {
-        self.line.end = endPoint
-        self.setNeedsDisplay()
     }
 }

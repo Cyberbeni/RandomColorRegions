@@ -9,12 +9,17 @@
 import CoreGraphics
 
 class Region {
-    private var points: [CGPoint]
-    
+    // MARK: initialization
     init(points: [CGPoint]) {
         self.points = points
     }
+    
+    // MARK: - private variables
+    
+    private let points: [CGPoint]
 }
+
+// MARK: - protocol extension
 
 extension Region: Drawable {
     func draw(in context: CGContext) {

@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-class Intersection: Comparable {
+class Intersection {
     weak var selfLine: Line!
     weak var line: Line!
     var point: CGFloat
@@ -20,7 +20,9 @@ class Intersection: Comparable {
         self.line = line
         self.point = point
     }
-    
+}
+
+extension Intersection: Comparable {
     static func < (lhs: Intersection, rhs: Intersection) -> Bool {
         return lhs.point < rhs.point
     }

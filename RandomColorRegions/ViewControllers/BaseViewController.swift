@@ -9,9 +9,10 @@
 import UIKit
 
 class BaseViewController<BaseView: UIView>: UIViewController {
+    // MARK: public variables
     var baseView: BaseView { return self.view as! BaseView }
 
-    // MARK: overrides
+    // MARK: - overrides
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .all }
     
     override func loadView() {

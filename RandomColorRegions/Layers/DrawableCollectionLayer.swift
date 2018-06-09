@@ -10,10 +10,7 @@ import UIKit
 
 // Since we want to store Regions and Lines in a separate layer, it's better to make it model specific instead of accepting any Drawable object in every instance of this class.
 class DrawableCollectionLayer<Element: Drawable>: CALayer {
-    private var elementsToAdd = [Element]()
-    private var needsToClear = false
-    private var savedImage: CGImage?
-    private var color: CGColor?
+    // MARK: initialization
     
     init(color: CGColor? = nil) {
         super.init()
@@ -25,10 +22,25 @@ class DrawableCollectionLayer<Element: Drawable>: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - public functions
+    
     func reset() {
         self.needsToClear = true
         self.setNeedsDisplay()
     }
+    
+    func add(elementsToDraw: Element...) {
+        self.add(elementsToDraw: elementsToDraw)
+    }
+    
+    func add(elementsToDraw: [Element]) {
+        DispatchQueue.main.async {
+            self.elementsToAdd.append(contentsOf: elementsToDraw)
+            self.setNeedsDisplay()
+        }
+    }
+    
+    // MARK: - overrides
     
     override func draw(in context: CGContext) {
         if self.needsToClear {
@@ -61,14 +73,10 @@ class DrawableCollectionLayer<Element: Drawable>: CALayer {
         self.savedImage = context.makeImage()
     }
     
-    func add(elementsToDraw: Element...) {
-        self.add(elementsToDraw: elementsToDraw)
-    }
+    // MARK: - private variables
     
-    func add(elementsToDraw: [Element]) {
-        DispatchQueue.main.async {
-            self.elementsToAdd.append(contentsOf: elementsToDraw)
-            self.setNeedsDisplay()
-        }
-    }
+    private var elementsToAdd = [Element]()
+    private var needsToClear = false
+    private var savedImage: CGImage?
+    private var color: CGColor?
 }

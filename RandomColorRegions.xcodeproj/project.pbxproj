@@ -139,13 +139,21 @@
 		7536A64220CB2D9000B32942 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				75CF2B9A20CC235F001AC937 /* Protocols */,
 				7536A64320CB2DA600B32942 /* Line.swift */,
 				7536A64520CB400100B32942 /* Region.swift */,
-				7536A64720CB411700B32942 /* Drawable.swift */,
 				7536A64B20CB49D200B32942 /* RegionGenerator.swift */,
 				7536A64D20CB4CE800B32942 /* Intersection.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		75CF2B9A20CC235F001AC937 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7536A64720CB411700B32942 /* Drawable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A78F2B944FEBF58F2834C05C /* Pods */ = {

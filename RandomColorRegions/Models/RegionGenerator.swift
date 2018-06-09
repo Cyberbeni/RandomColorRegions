@@ -10,8 +10,7 @@ import Foundation
 import CoreGraphics
 
 class RegionGenerator {
-    private var lines = [Line]()
-    
+    // MARK: public functions
     func reset() {
         lines.removeAll()
     }
@@ -92,6 +91,7 @@ class RegionGenerator {
                             break
                         } else {
                             if pointArray.contains(nextIntersection) {
+                                //
                                 break
                             }
                             print(nextIntersection.isForward ? "forward" : "backward")
@@ -117,6 +117,12 @@ class RegionGenerator {
         
         return newRegions
     }
+    
+    // MARK: - private variables
+    
+    private var lines = [Line]()
+    
+    // MARK: - private functions
     
     private func getIndex(for line: Line, in intersectionsToSearchIn: SortedArray<Intersection>?) -> Int? {
         guard let intersectionsToSearchIn = intersectionsToSearchIn else { return nil }
