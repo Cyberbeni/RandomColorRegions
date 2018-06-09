@@ -92,6 +92,8 @@ class DrawingView: UIView {
     private func setup() {
         self.backgroundColor = .white
         
+        self.isMultipleTouchEnabled = true
+        
         self.layer.addSublayer(self.regionsLayer)
         self.layer.addSublayer(self.linesLayer)
         self.currentLineLayers.reserveCapacity(8)
