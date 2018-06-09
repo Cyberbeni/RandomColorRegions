@@ -12,6 +12,13 @@ class RegionGenerator {
     private var lines = [Line]()
     
     func add(line: Line) -> [Region] {
+        lines.forEach { (storedLine) in
+            if let intersectionPoint = line.intersectionPoint(with: storedLine) {
+                line.intersections.insert(Intersection(line: storedLine, point: intersectionPoint.own))
+                storedLine.intersections.insert(Intersection(line: line, point: intersectionPoint.others))
+            }
+        }
+        
         let newRegions = [Region(points: [CGPoint(x: 10, y: 10),CGPoint(x: 10, y: 100),CGPoint(x: 100, y: 100),CGPoint(x: 100, y: 10)])]
         
         self.lines.append(line)
